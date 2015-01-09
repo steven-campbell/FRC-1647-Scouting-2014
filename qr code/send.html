@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <style type="text/css">
+            body {
+                background-color: #770E17;
+                color: #FFFFFF;
+            }
+            button {
+                width: 100px;
+                height: 30px;
+            }
+        </style>
+        <script type="text/javascript" src="functions.js"></script>
+    </head>
+    <body>
+        <button onclick="parent.location='index.html'">&lt;  Back</button>
+        <div id="qrcode"></div>
+        <p>Code: <span id="current"></span>/<span id="max"></span></p>
+        <script type="text/javascript">
+            qrcode = new QRCode(document.getElementById("qrcode"), {
+	            width :300,
+	            height : 300
+            });
+        </script>
+        <script type="text/javascript">
+            var min = 0;
+            var max = localStorage["len"];
+            var current = 0;
+            viewQR(current);
+            function viewQR(codeNum) {
+                var data = localStorage["teamData" + codeNum];
+                qrcode.makeCode(data);
+                document.getElementById("current").innerHTML = (current + 1);
+                document.getElementById("max").innerHTML = max;
+            }
+
+            function changeVal(direction) {
+                if (direction == "up") {
+                    current += 1;
+                    if (current < max) {
+                        viewQR(current);
+                    } else {
+                        alert("You are at the last QR code.")
+                        current -= 1;
+                    }
+                } else {
+                    current -= 1;
+                    if (current >= min) {
+                        viewQR(current);
+                    } else {
+                        alert("You are at the first QR code.");
+                        current += 1;
+                    }
+                }
+            }
+        </script>
+        <button onclick="changeVal('down')">&lt;</button>
+        <button onclick="changeVal('up')">&gt;</button>
+    </body>
+</html>

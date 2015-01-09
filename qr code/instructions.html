@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <style type="text/css">
+            body {
+                background-color: #770E17;
+                color: #FFFFFF;
+            }
+            h3, h4, p {
+                text-align: left;
+            }
+            button {
+                width: 100px;
+                height: 30px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <button onclick="parent.location='index.html'" class="button">&lt;  Back</button>
+        <h3>Iron Devils 1647 PreScouting App</h3>
+        <h3>Instructions</h3>
+        <h4>Adding Team Data</h4>
+        <p>To add PreScouting data on each team, click on Add New Team and fill in the data. Submitting will save a copy of the data and allows you to add more data.</p>
+        <h4>Sending Team Data</h4>
+        <p>This app creates QR codes for each set of data created. The QR code contains comma separated values, which can be imported into a spreadsheet program of your choice. We suggest using QuickMark to scan the codes over a webcam.</p>
+        <h4>Deleting All Data</h4>
+        <p>After confirming the action, the third button will delete all of your data. There is no way to recover it or view the QR codes again. Import/scan your data before deleting all of the QR codes.</p>
+    </body>
+</html>

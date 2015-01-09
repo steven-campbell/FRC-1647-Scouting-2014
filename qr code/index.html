@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <style type="text/css">
+            body {
+                background-color: #770E17;
+                color: #FFFFFF;
+                text-align: center;
+            }
+            button {
+                width: 50%;
+                height: 100px;
+                margin: 10px 0;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h3>Iron Devils 1647 PreScouting App</h3>
+        <button onclick="parent.location='new.html'">Add New Team</button>
+        <button onclick="parent.location='send.html'">Send Data</button>
+        <button onclick="clearAllTeams()">Clear All Teams</button>
+        <button onclick="parent.location='instructions.html'">Instructions</button>
+    </body>
+</html>

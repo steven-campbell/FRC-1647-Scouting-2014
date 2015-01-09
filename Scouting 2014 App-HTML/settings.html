@@ -1,0 +1,29 @@
+<!-- settings screen -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Settings</title>
+	</head>
+	<body>
+		<div>
+			<p id='AppName'></p>
+			<p id='CompName'></p>
+		</div>
+		<div>
+			<h2>Settings</h2>
+			<p>Choose a Competition	<button onclick='getEvents(2014);addEventsToDOM()'>Update List of Events</button></p>
+			<select id='settings-events'>
+				<option>Choose One...</option>
+			</select>
+			<p>Team Name (to be displayed in upper-right corner)	<input id='settings-teamname' type='text' /></p>
+			<button onclick='saveSettings()'>Save Settings</button>
+		</div>
+		<div>
+			<p>App Created by FRC 1647, the Iron Devils</p>
+		</div>
+	</body>
+	<script src='js/jquery-1.11.1.min.js'></script>
+	<script src='js/functions.js'></script>
+	<script src='js/settings-index.js'></script>
+	<script type='text/javascript'>addEventsToDOM();addPersonalization();addPersonalizationToSettings();</script>
+</html>

@@ -1,0 +1,5 @@
+Thank you for your interest in our PreScouting tool.
+
+Right now, it is just in the beta phase of testing.
+
+To run the program on your PC, just launch "frc1647 PreScouting Merger.exe"

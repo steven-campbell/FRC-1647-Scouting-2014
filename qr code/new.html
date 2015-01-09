@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>QR Code Maker</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
+        <style type="text/css">
+            body {
+                background-color: #770E17;
+                color: #FFFFFF;
+            }
+            button {
+                height: 30px;
+                width: 100px;
+            }
+            .checkbox {
+                height: 25px;
+                width:  25px;
+                float: right;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="parent.location='index.html'">&lt;  Back</button>
+        <table>
+            <tr>
+                <td>Team #:</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><h3>Autonomous</h3></td>
+            </tr>
+            <tr>            
+                <td>Shoot 1 Point <input class="checkbox" type="checkbox" /></td>
+                <td>Shoot 10 Point <input class="checkbox" type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td>Offense?<input class="checkbox" type="checkbox" /></td>
+                <td>Defense?<input class="checkbox" type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td>Move?<input class="checkbox" type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td>Battery life</td>
+                <td><input type="text" /></td>
+            </tr>
+            <tr>
+                <td><h3>Tele-op</h3></td>
+            </tr>
+            <tr>
+                <td>Shoot 1 Point<input class="checkbox" type="checkbox" /></td>
+                <td>Shoot 10 Point<input class="checkbox" type="checkbox" /></td>
+            </tr>
+            <tr>
+                <td>Biggest strength?</td>
+                <td><input type="text" maxlength="40" /></td>
+            </tr>
+            <tr>
+                <td>Potential Problems?</td>
+                <td><input type="text" maxlength="40" /></td>
+            </tr>
+            <tr>
+                <td>Pickup?</td>
+                <td><input type="text" maxlength="40" /></td>
+            </tr>
+            <tr>
+                <td>Driver Experience</td>
+                <td><input id="range" type="range" min="0" max="3"/><span id="yrs"></span></td>
+            </tr>
+        </table>
+        <button onclick="makeCode()">Make Code</button>
+        <button onclick="clearAll()">Clear All</button>
+        <script type="text/javascript">
+                $("#range").
+                on("change", function () {
+                    var v = this.value;
+                    document.getElementById("yrs").innerHTML = v;
+                });                
+        </script>
+    </body>
+</html>
